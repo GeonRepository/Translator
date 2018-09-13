@@ -1,0 +1,124 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://www.googleapis.com/oauth2/v4/token
+    body:
+      encoding: ASCII-8BIT
+      string: grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer&assertion=eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJkZXZlbG9wZXJAbWF4aW1hbC15ZXctMjEwMjE5LmlhbS5nc2VydmljZWFjY291bnQuY29tIiwiYXVkIjoiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vb2F1dGgyL3Y0L3Rva2VuIiwiZXhwIjoxNTMyNjQzNjk5LCJpYXQiOjE1MzI2NDM1NzksInNjb3BlIjoiaHR0cHM6Ly93d3cuZ29vZ2xlYXBpcy5jb20vYXV0aC9jbG91ZC1wbGF0Zm9ybSJ9.DYSbFWzbHboQBDuUTErEoNz9MMnF7v_vx7C0Adq6PdBbAQDMKfvFBCXbr2ckfdoau8PoDo0LL4jF93wJi9_4r6EDrom7IzKRQrBlfiz7Ne7aMt3QKZ0w3Jbdhegw4hr3D61os6-qB7CB93kqVgnqw8R-BgMUZAnPYMtI6y72GqKYf1_OMbV0zTkMzZjyc42ziVGgLpigF6YgWLwuqeR4Zac49AA8hJSKiM8xpr9eQL9ogJwbZarK5NkQq_j-Lg5j_KGCjDu50dkQggNMjQnz-SsEqT1Q-Ai7UXHY4oR_cd0lQECULRyreON53gzd3ZmDl8_RUPPSfeNuuzBM7yyC4w
+    headers:
+      User-Agent:
+      - Faraday v0.15.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - Mon, 01 Jan 1990 00:00:00 GMT
+      Date:
+      - Thu, 26 Jul 2018 22:20:40 GMT
+      Vary:
+      - Origin
+      - X-Origin
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+         "access_token": "ya29.c.EloFBkudoHuZU_rdi3cWWSAnGwrqB1AhoOa5nTrhzuTdr60VVBjmGSNExLk557KOLNGeI3vmDeRScwHIsp5ISRbFJMNjb4cCRfIinGbWpYfMghLyFtuyyHRRAFg",
+         "token_type": "Bearer",
+         "expires_in": 3600
+        }
+    http_version: 
+  recorded_at: Thu, 26 Jul 2018 22:20:40 GMT
+- request:
+    method: post
+    uri: https://translation.googleapis.com/language/translate/v2
+    body:
+      encoding: UTF-8
+      string: '{"q":["house"],"target":"fr","model":"nmt"}'
+    headers:
+      User-Agent:
+      - gcloud-ruby/1.2.0
+      Google-Cloud-Resource-Prefix:
+      - "<Google-Cloud-Resource-Prefix>"
+      Content-Type:
+      - application/json
+      X-Goog-Api-Client:
+      - gl-ruby/2.4.1 gccl/1.2.0
+      Authorization:
+      - Bearer ya29.c.EloFBkudoHuZU_rdi3cWWSAnGwrqB1AhoOa5nTrhzuTdr60VVBjmGSNExLk557KOLNGeI3vmDeRScwHIsp5ISRbFJMNjb4cCRfIinGbWpYfMghLyFtuyyHRRAFg
+      Cache-Control:
+      - no-store
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Vary:
+      - Origin
+      - Referer
+      - X-Origin
+      Date:
+      - Thu, 26 Jul 2018 22:20:40 GMT
+      Server:
+      - ESF
+      Cache-Control:
+      - private
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Alt-Svc:
+      - quic=":443"; ma=2592000; v="44,43,39,35"
+      Transfer-Encoding:
+      - chunked
+    body:
+      encoding: ASCII-8BIT
+      string: |
+        {
+          "data": {
+            "translations": [
+              {
+                "translatedText": "maison",
+                "detectedSourceLanguage": "en",
+                "model": "nmt"
+              }
+            ]
+          }
+        }
+    http_version: 
+  recorded_at: Thu, 26 Jul 2018 22:20:40 GMT
+recorded_with: VCR 4.0.0

@@ -1,0 +1,10 @@
+<div id='request'>
+    <%= form_for :translations, url: translations_path, html: {id: 'translate_form'} do |f| %>
+      <%= f.hidden_field :input_language_code, value: 'en' %>
+      Content: <%= f.text_field :input_text %><br />
+      Language: <%= f.select :output_language_code, [['French','fr'],['German','de'],
+        ['Korean','ko']] %>
+      <button>Translate</button>
+    <% end %>
+    <br /><br />
+</div>
